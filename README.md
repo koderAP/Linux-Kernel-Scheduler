@@ -29,7 +29,7 @@ Unlike traditional schedulers (e.g., CFS or RT) that operate independently per t
   Kprobe-based instrumentation on `do_exit()` ensures graceful gang cleanup during unexpected terminations.
 
 * **Patch Format**
-  Delivered as a patch file for clean application on top of the vanilla Linux kernel.
+  Delivered as a patch file for clean application on top of the vanilla Linux kernel v6.13.4.
 
 ---
 
@@ -158,7 +158,6 @@ int main(int argc, char *argv[]) {
 ## Limitations and Future Work
 
 * Assumes number of threads ≤ number of CPU cores.
-* Currently supports only static gang registration (no dynamic resizing).
 * No per-gang time-quota enforcement (can be extended via `task_tick`).
 
 ---
