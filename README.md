@@ -53,7 +53,7 @@ Install the compiled kernel on your target ARM64 system and reboot into it.
 
 ## System Calls
 
-### `int sys_register_gang(int pid, int gangid, int exec_time)`
+#### `int sys_register_gang(int pid, int gangid, int exec_time)`
 
 Registers a process into a gang. The first thread becomes the leader. Ensures that the gang size does not exceed the number of CPU cores.
 
@@ -61,11 +61,11 @@ Registers a process into a gang. The first thread becomes the leader. Ensures th
 * `gangid`: Unique identifier for the gang.
 * `exec_time`: Expected execution time in seconds.
 
-### `int sys_exit_gang(int pid)`
+#### `int sys_exit_gang(int pid)`
 
 Removes a process from its gang and resets its scheduling policy. If it is the last member, the gang is destroyed.
 
-### `int sys_list_gang(int gangid, int* pids)`
+#### `int sys_list_gang(int gangid, int* pids)`
 
 Populates the provided array with PIDs of all active members in the gang.
 
